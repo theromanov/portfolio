@@ -1,0 +1,118 @@
+.burger {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 36px;
+    height: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    cursor: pointer;
+
+    span {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #151812;
+
+        &.long {
+            width: 36px;
+        }
+    }
+}
+
+
+.menu {
+    position: relative;
+    left: -100%;
+    transition: .9s all;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+
+    &_active {
+        visibility: visible;
+        left: 0;
+        opacity: 1;
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        opacity: .75;
+        z-index: 5;
+    }
+
+    &__block {
+        position: fixed;
+        z-index: 10;
+        background-color: $main-color;
+        width: 345px;
+        height: 100vh;
+
+        &-close {
+            cursor: pointer;
+            position: absolute;
+            top: 29px;
+            right: 26px;
+        }
+
+        &-list {
+            list-style-type: none;
+            margin: 145px 0 0 75px;
+        }
+
+        &-social {
+            width: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-60%);
+        }
+
+        &-link {
+            position: relative;
+            margin-bottom: 15px;
+
+            &:hover {
+                &::before {
+                    transition: .7s all;
+                    background-color: #fff;
+                    border: none;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 11px;
+                left: -35px;
+                display: block;
+                border: 1px solid #000;
+                height: 15px;
+                width: 15px;
+                border-radius: 100%;
+            }
+
+            a {
+                font-weight: 700;
+                font-size: 24px;
+                color: #fff;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+}

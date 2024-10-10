@@ -1,0 +1,30 @@
+.aside {
+    width: 340px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: rotate(90deg) translateX(110%) translateY(110px);
+
+    a {
+        transform: rotate(-90deg);
+
+        &:hover {
+            svg path {
+                fill: $main-color;
+            }
+        }
+    }
+
+    div {
+        height: 2px;
+        background-color: #000;
+        width: 70px;
+    }
+
+    h3 {
+        margin: 0;
+        font-weight: 700;
+        transform: rotate(-180deg);
+    }
+}

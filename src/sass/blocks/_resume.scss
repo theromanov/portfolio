@@ -1,0 +1,104 @@
+.resume {
+    padding-top: 120px;
+    height: 100vh;
+
+    &__title {
+        text-align: center;
+        @include before_circle;
+        position: relative;
+
+        &::before {
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+
+    &__wrapper {
+        margin-top: 60px;
+        margin-left: 73px;
+        display: grid;
+        grid-template-columns: repeat(2, 425px);
+        column-gap: 135px;
+    }
+
+    &__column {
+        &-head {
+            margin-top: 45px;
+            padding-left: 43px;
+            display: flex;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 37px;
+                height: 1px;
+                background-color: #000;
+                position: absolute;
+                top: 19px;
+                left: 7px;
+            }
+        }
+
+        &-item {
+            width: 417px;
+        }
+
+        &-wrap {
+            padding-left: 20px;
+        }
+
+        &-img {
+            position: relative;
+            @include before_circle;
+            padding: 12px 0 0 14px;
+
+            &::before {
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &-body {
+            padding-top: 15px;
+            padding-left: 43px;
+        }
+
+        &-title {
+            @include before_circle;
+            position: relative;
+            padding-left: 35px;
+
+            &::before {
+                width: 15px;
+                height: 15px;
+                top: 7px;
+                left: 0;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            position: relative;
+
+            li {
+
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -53px;
+                    left: 7px;
+                    height: 350px;
+                    width: 1px;
+                    background-color: #000;
+
+                }
+            }
+        }
+    }
+}
